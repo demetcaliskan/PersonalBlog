@@ -38,11 +38,12 @@ app.get("/posts/:postName", function(req, res) {
   posts.forEach(function(post) {
     if(_.lowerCase(post.title)===_.lowerCase(req.params.postName)) {
       console.log("Match found!");
+      res.render("post", {title: post.title, body: post.body});
     }
     else {
       console.log("Not a match.");
     }
-  }
+  });
 });
 
 app.post("/compose", function(req, res) {
