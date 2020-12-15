@@ -5,7 +5,7 @@
 <h1><%= post.title %></h1>
 <p>
   <%= post.body.substring(0, 100) + "..."%>
-  <% const l = "/posts/"+post.title.replace(/ /g, ''); %>
+  <% const l = "/posts/"+post._id; %>
   <a href=<%= l %>>Read More</a>
 </p>
 <% }) %>
